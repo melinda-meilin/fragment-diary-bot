@@ -1,0 +1,35 @@
+<!--
+  个人中心
+-->
+<view class="page">
+  <view class="profile-card">
+    <image class="avatar" src="{{avatarUrl || '/assets/default-avatar.png'}}" />
+    <text class="nickname">{{nickname || '碎片日记用户'}}</text>
+  </view>
+
+  <view class="stats-row">
+    <view class="stat-item">
+      <text class="stat-num">{{totalFragments}}</text>
+      <text class="stat-label">碎片</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{totalDiaries}}</text>
+      <text class="stat-label">日记</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{streak}}</text>
+      <text class="stat-label">连续天数</text>
+    </view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item">
+      <text>生成时间</text>
+      <text class="menu-value">每天 22:00</text>
+    </view>
+    <view class="menu-item">
+      <text>关于碎片日记</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--
+  日记详情页 — 展示完整日记内容
+-->
+<view class="page">
+  <view class="diary-header">
+    <text class="diary-date">{{date}}</text>
+    <text class="diary-meta">{{fragmentCount}} 个碎片合成</text>
+  </view>
+
+  <view class="diary-content">
+    <rich-text nodes="{{contentHtml}}"></rich-text>
+  </view>
+</view>

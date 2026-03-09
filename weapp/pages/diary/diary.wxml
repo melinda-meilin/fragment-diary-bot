@@ -1,0 +1,33 @@
+<!--
+  日记列表页
+-->
+<view class="page">
+  <!-- 手动生成按钮 -->
+  <view class="generate-bar" bindtap="onGenerate">
+    <text class="generate-btn">🖊️ 立即生成今天的日记</text>
+  </view>
+
+  <!-- 日记卡片列表 -->
+  <view class="diary-list" wx:if="{{diaries.length > 0}}">
+    <view
+      class="diary-card"
+      wx:for="{{diaries}}"
+      wx:key="id"
+      bindtap="onTapDiary"
+      data-date="{{item.diary_date}}"
+    >
+      <view class="diary-date">{{item.diary_date}}</view>
+      <view class="diary-preview">{{item.preview}}</view>
+      <view class="diary-meta">
+        <text>{{item.fragment_count}} 个碎片</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">还没有日记</text>
+    <text class="empty-hint">先去记录碎片，日记每晚自动生成</text>
+  </view>
+</view>

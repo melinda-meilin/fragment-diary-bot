@@ -1,0 +1,27 @@
+.page { padding: 40rpx; }
+
+.diary-header {
+  margin-bottom: 40rpx;
+}
+.diary-date {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1a1a2e;
+  display: block;
+}
+.diary-meta {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.diary-content {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.06);
+  font-size: 30rpx;
+  color: #333;
+  line-height: 2;
+}

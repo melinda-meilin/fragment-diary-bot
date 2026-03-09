@@ -1,0 +1,113 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Header */
+.header {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.date { font-size: 32rpx; font-weight: 600; color: #1a1a2e; }
+.count { font-size: 24rpx; color: #999; }
+
+/* Fragment list */
+.fragment-list {
+  flex: 1;
+  padding: 0 30rpx;
+}
+.fragment-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+.fragment-tag {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+  margin-top: 4rpx;
+}
+.fragment-body { flex: 1; }
+.fragment-content {
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fragment-time {
+  font-size: 22rpx;
+  color: #bbb;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* Empty state */
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-icon { font-size: 80rpx; margin-bottom: 20rpx; }
+.empty-text { font-size: 32rpx; color: #666; }
+.empty-hint { font-size: 24rpx; color: #bbb; margin-top: 10rpx; }
+
+/* Input bar */
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  border-top: 1rpx solid #eee;
+}
+.text-input {
+  flex: 1;
+  height: 72rpx;
+  background: #f5f5f5;
+  border-radius: 36rpx;
+  padding: 0 28rpx;
+  font-size: 28rpx;
+}
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 16rpx;
+  gap: 12rpx;
+}
+.action-btn {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f5f5f5;
+  font-size: 32rpx;
+}
+.action-btn:active { background: #e8e8e8; }
+.voice-btn.recording {
+  background: #ff4444;
+  animation: pulse 0.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.send-btn {
+  background: #1a1a2e;
+  width: auto;
+  padding: 0 28rpx;
+  border-radius: 36rpx;
+}
+.send-btn text { color: #fff; font-size: 26rpx; }

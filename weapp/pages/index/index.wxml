@@ -1,0 +1,61 @@
+<!--
+  首页 — 碎片记录页
+  顶部: 今日碎片列表
+  底部: 输入区（文字/拍照/语音）
+-->
+<view class="page">
+  <!-- 今日统计 -->
+  <view class="header">
+    <text class="date">{{today}}</text>
+    <text class="count">已记录 {{fragments.length}} 个碎片</text>
+  </view>
+
+  <!-- 碎片列表 -->
+  <scroll-view scroll-y class="fragment-list" wx:if="{{fragments.length > 0}}">
+    <view class="fragment-card" wx:for="{{fragments}}" wx:key="id">
+      <view class="fragment-tag">
+        <text wx:if="{{item.type === 'text'}}">📝</text>
+        <text wx:elif="{{item.type === 'voice'}}">🎙️</text>
+        <text wx:elif="{{item.type === 'photo'}}">📷</text>
+      </view>
+      <view class="fragment-body">
+        <text class="fragment-content">{{item.content}}</text>
+        <text class="fragment-time">{{item.timeStr}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">✏️</text>
+    <text class="empty-text">今天还没有碎片</text>
+    <text class="empty-hint">随手记录，晚上自动生成日记</text>
+  </view>
+
+  <!-- 底部输入区 -->
+  <view class="input-bar">
+    <input
+      class="text-input"
+      placeholder="记录此刻的想法..."
+      value="{{inputText}}"
+      bindinput="onInput"
+      bindconfirm="onSendText"
+      confirm-type="send"
+    />
+    <view class="action-buttons">
+      <view class="action-btn" bindtap="onChoosePhoto">
+        <text>📷</text>
+      </view>
+      <view
+        class="action-btn voice-btn {{isRecording ? 'recording' : ''}}"
+        bindlongpress="onStartRecord"
+        bindtouchend="onStopRecord"
+      >
+        <text>🎙️</text>
+      </view>
+      <view class="action-btn send-btn" bindtap="onSendText" wx:if="{{inputText}}">
+        <text>发送</text>
+      </view>
+    </view>
+  </view>
+</view>
