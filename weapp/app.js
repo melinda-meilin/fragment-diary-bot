@@ -5,7 +5,7 @@ App({
   globalData: {
     token: '',
     openid: '',
-    baseUrl: 'http://localhost:8000/api', // ← 替换成你的后端地址
+    baseUrl: 'https://fragment-diary-bot.onrender.com/api', // ← 替换成你的后端地址
   },
 
   onLaunch() {
